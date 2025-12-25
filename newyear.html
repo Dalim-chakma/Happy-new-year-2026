@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>শুভ নববর্ষ ২০২৬!</title>
+    <style>
+        /* পুরো বডির স্টাইল */
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* ব্যাকগ্রাউন্ডে ভাসমান হার্ট কণা */
+        .bg-hearts {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .bg-hearts span {
+            position: absolute;
+            display: block;
+            width: 20px; height: 20px;
+            background: rgba(255, 105, 180, 0.3); /* গোলাপি কণা */
+            bottom: -100px;
+            border-radius: 50%;
+            animation: animate 10s linear infinite;
+        }
+
+        @keyframes animate {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-1000px) rotate(720deg); opacity: 0; }
+        }
+
+        /* মেইন কার্ড */
+        .container {
+            width: 90%;
+            max-width: 650px;
+            background: rgba(255, 255, 255, 0.7); /* সাদাটে স্বচ্ছ ভাব */
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            border: 2px solid #ff69b4; /* গোলাপি বর্ডার */
+            padding: 40px;
+            text-align: center;
+            color: #d81b60; /* মেইন লেখার রং গোলাপি */
+            box-shadow: 0 15px 35px rgba(255, 105, 180, 0.3);
+            animation: slideUp 1.2s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            color: #ff1493; /* গাঢ় গোলাপি */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 5px rgba(255, 20, 147, 0.2);
+        }
+       h2 {
+            font-size: 2rem;
+            margin: 0;
+            color: #ff1192; /* গাঢ় গোলাপি */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 5px rgba(255, 20, 147, 0.2);
+        }
+
+        .year {
+            font-size: 6rem;
+            font-weight: 900;
+            color: #ff69b4; /* উজ্জ্বল গোলাপি */
+            display: block;
+            margin: -10px 0;
+            text-shadow: 4px 4px 0px #f8bbd0;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .message {
+            background: rgba(255, 255, 255, 0.4);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 25px 0;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            border: 1px dashed #ff69b4;
+            color: #ad1457; /* মেসেজের টেক্সট রং গোলাপি */
+            font-style: italic;
+        }
+
+        /* ফটো গ্যালারি */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .photo-box {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            height: 200px;
+            border: 4px solid #fff;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            transition: 0.4s;
+        }
+
+        .photo-box img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: 0.5s ease;
+        }
+
+        .photo-overlay {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(255, 20, 147, 0.8); /* গোলাপি ওভারলে */
+            color: white;
+            padding: 8px 0;
+            font-size: 0.9rem;
+            transform: translateY(100%);
+            transition: 0.4s;
+        }
+
+        .photo-box:hover { transform: translateY(-10px); border-color: #ff69b4; }
+        .photo-box:hover .photo-overlay { transform: translateY(0); }
+        .photo-box:hover img { transform: scale(1.1); }
+
+        .heart-icon {
+            color: #ff1493;
+            animation: beat .4s infinite alternate;
+            display: inline-block;
+        }
+
+        @keyframes beat {
+            to { transform: scale(1.4); }
+        }
+
+        footer { 
+            margin-top: 30px; 
+            font-weight: bold; 
+            color: #d81b60; /* ফুটার টেক্সট গোলাপি */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-hearts" id="bg-hearts"></div>
+
+    <div class="container">
+        <h1>Happy New Year</h1>
+      <h2>(kuki)</h2>
+        <span class="year">2026</span>
+        
+        <div class="message">
+            <p>প্রিয় বন্ধু, <br>
+            পুরানো বছরের সব দুঃখ ভুলে নতুন বছরে সাজিয়ে নাও তোমার জীবন। আমাদের এই সুন্দর স্মৃতিগুলো যেন চিরকাল অমলিন থাকে। <span class="heart-icon">❤</span></p>
+        </div>
+
+        <div class="photo-gallery">
+            <div class="photo-box">
+                <img src="pic1.jpg" alt="স্মৃতি ১">
+                <div class="photo-overlay">সেরা সময়</div>
+            </div>
+            <div class="photo-box">
+                <img src="pic2.jpg" alt="স্মৃতি ২">
+                <div class="photo-overlay">প্রিয় স্মৃতি</div>
+            </div>
+            <div class="photo-box">
+                <img src="pic3.jpg" alt="স্মৃতি ৩">
+                <div class="photo-overlay">চিরদিনের বন্ধু</div>
+            </div>
+        </div>
+
+        <footer>
+            সবসময় সাথে থেকো... <br>
+            <span style="color: #ff1493;">— তোমার বন্ধু</span>
+        </footer>
+    </div>
+
+    <script>
+        // ব্যাকগ্রাউন্ডের গোলাপি কণা তৈরির স্ক্রিপ্ট
+        const container = document.getElementById('bg-hearts');
+        for (let i = 0; i < 20; i++) {
+            const heart = document.createElement('span');
+            let size = Math.random() * 25 + 10 + 'px';
+            heart.style.width = size;
+            heart.style.height = size;
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 5 + 5 + 's';
+            heart.style.animationDelay = Math.random() * 5 + 's';
+            container.appendChild(heart);
+        }
+    </script>
+</body>
+</html>
